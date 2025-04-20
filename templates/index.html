@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHL Assessment Recommender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .assessment-card {
+            transition: all 0.3s ease;
+        }
+        .assessment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        .loader {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .badge {
+            margin-right: 5px;
+        }
+        .header-section {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .reason-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <div class="container">
+            <h1 class="text-center">SHL Assessment Recommender</h1>
+            <p class="text-center lead">Find the right assessments for your hiring needs</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Enter Job Description or Query</h5>
+                        <form id="recommendForm">
+                            <div class="mb-3">
+                                <textarea class="form-control" id="queryInput" rows="4" placeholder="Enter your job description or query here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loader" id="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Finding the best assessments for you...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div class="row" id="resultsContainer">
+            <!-- Recommendations will be inserted here -->
+        </div>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p>SHL Assessment Recommendation System</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('recommendForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const query = document.getElementById('queryInput').value;
+            
+            if (!query) {
+                alert('Please enter a query');
+                return;
+            }
+            
+            // Show loader
+            document.getElementById('loader').style.display = 'block';
+            
+            // Clear previous results
+            document.getElementById('resultsContainer').innerHTML = '';
+            
+            // Make API call
+            fetch('/recommend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: query
+                }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hide loader
+                document.getElementById('loader').style.display = 'none';
+                
+                // Display results
+                displayResults(data.recommended_assessments || []);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('loader').style.display = 'none';
+                alert('Error getting recommendations: ' + error.message);
+            });
+        });
+        
+        function displayResults(recommendations) {
+            const resultsContainer = document.getElementById('resultsContainer');
+            
+            if (recommendations.length === 0) {
+                resultsContainer.innerHTML = '<div class="col-12"><div class="alert alert-info">No matching assessments found. Try refining your query.</div></div>';
+                return;
+            }
+            
+            // Add result count header
+            resultsContainer.innerHTML = `
+                <div class="col-12 mb-4">
+                    <h3>Found ${recommendations.length} Recommended Assessments</h3>
+                </div>
+            `;
+            
+            // Add each recommendation
+            recommendations.forEach((rec, index) => {
+                
+                const card = document.createElement('div');
+                card.className = 'col-lg-6 mb-4';
+                card.innerHTML = `
+                    <div class="card h-100 assessment-card">
+                        <div class="card-body">
+                            <h5 class="card-title">${rec.name}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${rec.test_type}</h6>
+                            
+                            <div class="mb-3">
+                                <span class="badge bg-info">Duration: ${rec.duration}</span>
+                                <span class="badge ${rec.remote_testing === 'Yes' ? 'bg-success' : 'bg-secondary'}">
+                                    Remote Testing: ${rec.remote_testing}
+                                </span>
+                                <span class="badge ${rec.adaptive_support === 'Yes' ? 'bg-success' : 'bg-secondary'}">
+                                    Adaptive/IRT: ${rec.adaptive_support}
+                                </span>
+                            </div>
+                            
+                            <p class="reason-text">${rec.reason || 'No explanation provided'}</p>
+                            
+                            <a href="${rec.url}" class="btn btn-sm btn-outline-primary" target="_blank">View Assessment</a>
+                        </div>
+                    </div>
+                `;
+                
+                resultsContainer.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

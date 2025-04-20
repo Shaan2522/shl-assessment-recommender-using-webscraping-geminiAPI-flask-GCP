@@ -1,0 +1,8 @@
+flask
+pandas
+python-dotenv
+google-generativeai
+requests
+gunicorn
+bs4
+google-cloud-aiplatform

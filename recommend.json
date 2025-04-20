@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Professional/Individual Contributor - Short Form",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professionalindividual-contributor-short-form/",
+    "description": "The Professional/Individual Contributor solution is for mid to upper-level, non-managerial positions. Sample tasks for these jobs include, but are not limited to: meeting with clients to determine their needs, analyzing data sets, and working with co-workers to complete projects. Potential job titles that use this solution are: Engineer, Human Resource Consultant, and IT Analyst.",
+    "duration": "44",
+    "test_type": "Ability & Aptitude, Biodata and Situational Judgement, Personality & Behavior, Simulations",
+    "remote_testing": "Yes",
+    "adaptive_support": "Yes",
+    "reason": "This assessment measures ability & aptitude, personality & behavior which will be helpful for individual contributor roles."
+  },
+  {
+    "name": "Professional + 8.0 Job Focused Assessment",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-8-0-jfa/",
+    "description": "The Professional 8.0 Job-Focused Assessment is designed for all non-managerial professional/individual contributor positions. It measures behaviors that underlie successful performance in a professional/individual contributor setting across a wide range of industries.",
+    "duration": "16",
+    "test_type": "Biodata and Situational Judgement,Knowledge & Skills, Personality & Behaviour",
+    "remote_testing": "Yes",
+    "adaptive_support": "No",
+    "reason": "This assessment measures behaviours, skills and knowledge required for professional roles and has a short duration"
+  },
+  {
+    "name": "Graduate + 8.0 Job Focused Assessment",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/graduate-8-0-job-focused-assessment/",
+    "description": "The Graduate + 8.0 Job Focused Assessment is a short, targeted, globally applicable assessment which includes a short cognitive ability measure. It helps you identify graduates with the highest potential to contribute and succeed, as well as providing actionable feedback to help you onboard new hires.It is designed for professional level positions appropriate for recent college graduates and is available as part of SHL\u00e2\u20ac\u2122s Graduate Solution.",
+    "duration": "30",
+    "test_type": "Ability & Aptitude, Biodata and Situational Judgement, Personality & Behaviour",
+    "remote_testing": "Yes",
+    "adaptive_support": "No",
+    "reason": "This assessment is suitable for graduate-level analyst roles and includes ability and personality measures."
+  },
+  {
+    "name": "Contact Center Customer Service + 8.0",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/contact-center-customer-service-8-0/",
+    "description": "The Contact Center + 8.0 - Customer Service Job Focused Assessment is designed to measure the skills, competencies, and behaviors needed for success in contact center roles where the main focus is customer service. This JFA includes a mobile-optimized contact center simulation, a behavioral assessment, and a cognitive test. Together, these assessments capture the ability to provide exceptional customer service in entry-level contact center roles.",
+    "duration": "41",
+    "test_type": "Ability & Aptitude, Biodata and Situational Judgement, Competencies, Personality & Behaviour, Simulations",
+    "remote_testing": "Yes",
+    "adaptive_support": "No",
+    "reason": "This assessment measures various parameters like skills, competencies and behaviors which would be helpful for an analyst role. The duration is also perfect."
+  },
+  {
+    "name": "Professional + 7.1 (Americas)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-7-1-%28americas%29/",
+    "description": "Our Professional + 7.1 solution is designed for all non-managerial professional individual contributor positions, and includes SHL\u00e2\u20ac\u2122s new innovative mobile-first ability assessment, Verify Interactive \u2013 Deductive Reasoning. Sample tasks for these jobs include, but are not limited to: gathering requirements, analyzing data, managing projects, producing products or services.",
+    "duration": "56",
+    "test_type": "Biodata and Situational Judgement,Competencies, Personality & Behaviour",
+    "remote_testing": "Yes",
+    "adaptive_support": "Yes",
+    "reason": "Since the duration of this test is greater than 45 mins. Thus, this assessment is not suitable."
+  },
+  {
+    "name": "Professional + 7.1 (International)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/view/professional-7-1-solution/",
+    "description": "Our Professional + 7.1 solution is designed for all non-managerial professional individual contributor positions, and includes SHL\u00e2\u20ac\u2122s new innovative mobile-first ability assessment, Verify Interactive \u2013 Deductive Reasoning. Sample tasks for these jobs include, but are not limited to: gathering requirements, analyzing data, managing projects, producing products or services.",
+    "duration": "56",
+    "test_type": "Biodata and Situational Judgement,Competencies, Personality & Behaviour",
+    "remote_testing": "Yes",
+    "adaptive_support": "Yes",
+    "reason": "Since the duration of this test is greater than 45 mins. Thus, this assessment is not suitable."
+  }
+]
