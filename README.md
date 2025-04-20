@@ -1,4 +1,4 @@
-# shl-assessment-recommender-using-webscraping-geminiAPI-flask-GCP
+# SHL Assessments Recommender built using webscraping, geminiAPI, flask and GCP
 
 A simple yet powerful web app that lets users query and search for SHL assessments based on natural language inputs. The app uses **Google's Gemini API** to understand user queries and fetch relevant assessment details from a **CSV file**. Built with **Flask** as the backend, and a clean **HTML/CSS frontend**, this project integrates Google Cloud services like **GCS** and **Compute Engine VM** for deployment.
 
