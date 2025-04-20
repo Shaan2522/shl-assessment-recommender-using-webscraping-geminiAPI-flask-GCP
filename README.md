@@ -30,11 +30,6 @@ A simple yet powerful web app that lets users query and search for SHL assessmen
 
 ---
 
-## 📁 Project Structure
-
-
----
-
 ## 🚀 Setup Instructions
 
 1. **Clone the Repository**
