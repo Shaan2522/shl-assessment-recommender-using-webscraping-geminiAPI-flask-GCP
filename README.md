@@ -37,18 +37,6 @@ A simple yet powerful web app that lets users query and search for SHL assessmen
 
 ## 🚀 Setup Instructions
 
-### ✅ Prerequisites
-
-- Python 3.8+
-- Google Cloud Project with:
-  - Gemini API / Vertex AI enabled
-  - GCS bucket for file storage
-  - VM instance (Ubuntu recommended)
-
----
-
-### 📦 Install Dependencies
-
 1. **Clone the Repository**
 
 ```bash
