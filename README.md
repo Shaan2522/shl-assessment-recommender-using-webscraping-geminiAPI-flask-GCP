@@ -40,8 +40,7 @@ A simple yet powerful web app that lets users query and search for SHL assessmen
 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/shl-assessment-gemini.git
-cd shl-assessment-gemini
+git clone https://github.com/Shaan2522/shl-assessment-recommender-using-webscraping-geminiAPI-flask-GCP
 ```
 
 2. **Set Up a Virtual Environment**
